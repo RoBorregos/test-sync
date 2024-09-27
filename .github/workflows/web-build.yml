@@ -25,11 +25,11 @@ jobs:
         cache: 'npm'
     - name: Create .env file
       run: |
-          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
-          echo "NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }}" >> .env
-          echo "NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }}" >> .env
-          echo "DISCORD_CLIENT_ID=${{ secrets.DISCORD_CLIENT_ID }}" >> .env
-          echo "DISCORD_CLIENT_SECRET=${{ secrets.DISCORD_CLIENT_SECRET }}" >> .env
+          echo "DATABASE_URL=file:./db.sqlite" >> .env
+          echo "NEXTAUTH_SECRET=PiEq95e/hDuArOlgnCKRDHJs+chuUoKh/MOy4rKYBGU=" >> .env
+          echo "NEXTAUTH_URL=http://localhost:3000" >> .env
+          echo "DISCORD_CLIENT_ID=12345678" >> .env
+          echo "DISCORD_CLIENT_SECRET=12345678" >> .env
     - run: cat .env 
     - run: npm install
     - run: npm run build
