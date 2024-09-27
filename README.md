@@ -16,3 +16,11 @@ Forked repo with sync: https://github.com/roborregosteam/test-sync
 
 1. Beware of loops caused by workflows
 2. Some of the repositories must be public for usage without github enterprise.
+3. Avoid modifying the fork (fork sync could fail)
+4. Jobs use Github API key, which has [some rates](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-authenticated-users) (5,000 req/hr for personal tokens) for API usage. Must be considered when scaling.
+
+## Possible improvements
+
+1. Parse .env.example to create temporal .env (very specific to the framework used by this example project)
+2. Automatically make default branch protected on forked repo - (would require testing to determine if it affects fork sync)
+3. Add a job to completely delete fork and recreate - ATM seems to be a waste of computational resources (?
