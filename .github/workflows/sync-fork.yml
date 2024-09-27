@@ -19,7 +19,7 @@ jobs:
         run: |
           # Assume repo has the same name in account
           REPO_NAME=${GITHUB_REPOSITORY##*/}
-          ACCOUNT=${env.PERSONAL_ACCOUNT}
+          ACCOUNT=${{env.PERSONAL_ACCOUNT}}
           curl -L \
           -X POST \
           -H "Accept: application/vnd.github+json" \
