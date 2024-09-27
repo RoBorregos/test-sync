@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["Node.js build"]
     types:
-      - success # Options: completed, success, failure
+      - completed # Options: completed, success, failure
 
 env:  # Define environment variables at the workflow level
   PERSONAL_ACCOUNT: roborregosteam
